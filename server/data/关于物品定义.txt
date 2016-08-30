@@ -1,0 +1,9 @@
+全局所有物品都定义在items.txt里 定义了所有物品.
+1000以内都是武器 param1-6都顺序读取
+角色包裹里itemParam1是武器光武参数.
+itemparam2是武器攻击力
+
+
+1000-2000 是消耗品 
+角色包裹里itemParam1 是hp恢复值 
+itemParam2是物品叠加个数

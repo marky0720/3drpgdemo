@@ -25,8 +25,8 @@ MyCharHeaderMsg::MyCharHeaderMsg( ISceneNode* parent,const wchar_t* msg)
 	GetWindowsDirectory(tmp,511);
 	strcat(tmp,"\\fonts\\SIMSUN.TTC");  //SIMSUN.TTC宋体,新宋体         SIMKAI.TTF楷体     \STXIHEI.TTF   Fixedsys
 
-//	IGUIFont* font = dev->getGUIEnvironment()->getFont(tmp,18,true,0);
-	IGUIFont* font = getIrrUI()->getDXFont("宋体",true,18,0,500);
+	IGUIFont* font = getIrrUI()->getFont(tmp,18,true,0);
+//	IGUIFont* font = getIrrUI()->getDXFont("宋体",true,18,0,500);
 	ITextSceneNode* textnode= getIrrSmgr()->addTextSceneNode(font,	
 			msg, 
 			color,	parent,

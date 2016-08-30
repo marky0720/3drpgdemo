@@ -885,7 +885,7 @@ void MyCharacter::OnEvent(const irr::SEvent & e)
 	//键盘事件
 	if (e.EventType == EET_KEY_INPUT_EVENT) {
  
-		   if ( 
+		    
 		   //按X 切换 站立 攻击准备模式
 			if (e.KeyInput.Key == KEY_KEY_X && e.KeyInput.PressedDown==false) { 
 			   ChangeState();

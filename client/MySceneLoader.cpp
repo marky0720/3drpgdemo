@@ -197,13 +197,13 @@ char* inBuf2=new char[255];    //用于保存读取的字符串
 		//MessageBox(0,"读取场景声音配置文件失败!","",0);
 		//说明这个场景不要音乐
 		//exit(1);
-		getSoundEngine()->stopAllSounds();
-		getSoundEngine()->removeAllSoundSources();
+//		getSoundEngine()->stopAllSounds();
+	//	getSoundEngine()->removeAllSoundSources();
 	}else{
 
-		getSoundEngine()->stopAllSounds();
-		getSoundEngine()->removeAllSoundSources();
-		getSoundEngine()->play2D(inBuf2,true);//直接播放
+		//getSoundEngine()->stopAllSounds();
+		//getSoundEngine()->removeAllSoundSources();
+		//getSoundEngine()->play2D(inBuf2,true);//直接播放
 	}
 
 

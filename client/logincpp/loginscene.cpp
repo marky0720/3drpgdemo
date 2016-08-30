@@ -16,6 +16,24 @@
 
 using namespace Login;
 
+#include <windows.h>
+#include <vfw.h>
+#include <stdio.h>
+#pragma comment(lib,"vfw32.lib")
+
+bool playBGM( char* s)
+{	 
+
+	HWND hWnd;
+	hWnd = MCIWndCreate(0,NULL,0,TEXT( s )); //mp3 wav wma
+
+	ShowWindow(hWnd,SW_HIDE);
+
+	MCIWndPlay(hWnd);
+
+	return 1;
+
+}
 
 
 LoginCore::LoginCore () {
@@ -51,9 +69,9 @@ LoginCore::LoginCore () {
 	}
 
 	//创建个声音引擎
-	engine = getSoundEngine();
+//	engine = getSoundEngine();
 	//engine->play2D("music/热血燃烧.mp3",true);//直接播放
-
+	playBGM("music/热血燃烧.mp3");
 
 	//ISound* music =engine->play3D("music/rain.wav",vector3df(100,10,290),true,false,true);
 	//if (music)
@@ -181,8 +199,10 @@ scene::ISceneNode* pJointNode = mgr->getRootNode()->getMS3DJointNode("joint23");
 if(pJointNode)
 {
 
-	//加载武器
-	backweapon->ChangeWeapon(9);
+ 
+	//加载武器 随机 
+	backweapon->ChangeWeapon(randomNum(1,9));
+
 	backweapon->getNode()->setID(101);
 	//backweapon->setUseHLSL(true);
 	backweapon->getNode()->setScale(vector3df(6,6,6));
@@ -192,8 +212,9 @@ if(pJointNode)
 	//绑定到背上
 	pJointNode->addChild( backweapon->getNode() );
 
-	 //表示光武
-	 backweapon->setUseHLSL(true,false,6);
+ 
+	 //随机  光武
+	 backweapon->setUseHLSL(true,false,randomNum(1,6));
 }
 
 //-----------------------------------------------------------------------------------------------------
@@ -469,22 +490,7 @@ bool LoginCore::OnEvent (const SEvent& e) {
 					WriteToLog(str);*/
 
 				}
-
-				if(e.KeyInput.Key==KEY_DOWN){
-					float volume=engine->getSoundVolume()-0.1f;
-					if(volume<=0){
-						volume=0;
-					}
-					engine->setSoundVolume(volume);
-				}
-
-				if(e.KeyInput.Key==KEY_UP){
-					float volume=engine->getSoundVolume()+0.1f;
-					if(volume>=1){
-						volume=1;
-					}
-					engine->setSoundVolume(volume);
-				}
+ 
 			
 				 return false; 
 		}
@@ -549,7 +555,7 @@ bool LoginCore::OnEvent (const SEvent& e) {
 						//退出了,清除内存中的所有纹理图片
 							drv->removeAllTextures(); //有效
 						device->closeDevice();
-						device->drop();
+						// device->drop();
 						break;
 					}
 
@@ -648,7 +654,7 @@ flyweapon->getNode()->setRotation(vector3df(0,40+90,0));
 
 				backweapon->update();
 
-					engine->setListenerPosition(cam->getPosition(),cam->getTarget());
+					//engine->setListenerPosition(cam->getPosition(),cam->getTarget());
 
 					smgr->setAmbientLight(video::SColor(0,60,60,60));
 
@@ -681,9 +687,9 @@ flyweapon->getNode()->setRotation(vector3df(0,40+90,0));
 
 
 
-	//	drv->removeAllHardwareBuffers(); //有效
+	 	drv->removeAllHardwareBuffers(); //有效
 		//退出了,清除内存中的所有纹理图片
-	//	drv->removeAllTextures(); //有效
+	 	drv->removeAllTextures(); //有效
 
 
 

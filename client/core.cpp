@@ -9,7 +9,7 @@ int recvcount=0; //记录接收数据包次数
 /*
 消息回调函数
 */
-void WINAPI  RecvData(const char * pData,const unsigned int DataLength)
+void WINAPI  RecvData(  char * pData,unsigned long  DataLength)
 {
 	//有数据
 	if(pData!=NULL)
@@ -286,7 +286,7 @@ bool GameMain::InitNetWork()
 	
 
 	//初始化网络引擎
-	if(client.ConnectServer(inBuf,port,RecvData)){
+	if(client.Init(RecvData,inBuf,port)){
 		printf("InitNetWork连接ok\n");
 
 	}else{

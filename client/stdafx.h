@@ -54,13 +54,11 @@ BOOL WChar2MByte(LPCWSTR lpcwszStr, LPSTR lpszStr, DWORD dwSize);
 
 
 #include <stdio.h>
-#include <irrKlang.h>
+ 
 #include <conio.h>
 
 
-
-using namespace irrklang;
-#pragma comment(lib, "irrKlang.lib") 
+ 
 
 
 #include "typedef.h"
@@ -84,8 +82,7 @@ bool IniGetString( char *strFile, char *lpAppName, char *lpKeyName,char* RetValu
 int IniGetInt(  char *strFile, char *lpAppName, char *lpKeyName );
 
 
-//irrklang声音引擎
-ISoundEngine* getSoundEngine();
+ 
 //得到irr引擎的对象
 irr::IrrlichtDevice * getIrrDevice();
 

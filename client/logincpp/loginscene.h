@@ -58,7 +58,7 @@ irr::scene::ISceneManager* smgr;
 				IGUIButton* btn_quit;
 				IGUIEditBox* editbox;//ÊäÈëĞÕÃû¿ò
 				
-				ISoundEngine* engine;
+				//ISoundEngine* engine;
 
 		SLogin* slogin;
 

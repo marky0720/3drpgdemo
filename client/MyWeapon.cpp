@@ -299,7 +299,7 @@ void MyWeapon::setUseHLSL(bool b,bool transparentMeta,int weaponType)
 
 void MyWeapon::useBillboard()
 {
-
+	/*
 		scene::ISceneNode* pJointNode =weaponNode->getMS3DJointNode("joint2");  //joint4ÊÇ½£¼â
 		if(pJointNode)
 		{
@@ -357,7 +357,7 @@ void MyWeapon::useBillboard()
 			glow->drop();
 
 		}
-
+*/
 }
 
 

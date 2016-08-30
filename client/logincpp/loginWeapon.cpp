@@ -255,7 +255,7 @@ void MyWeapon2::ChangeWeapon(int id)
 //
 void MyWeapon2::useBillboard(void)
 {
-
+	/*
 	scene::ISceneNode* pJointNode =weaponNode->getMS3DJointNode("joint2");  //joint4ÊÇ½£¼â
 	if(pJointNode)
 	{
@@ -300,7 +300,8 @@ void MyWeapon2::useBillboard(void)
 	
 		//1219e2c0.tga
 
-	}
+	}*/
+
 }
 
 

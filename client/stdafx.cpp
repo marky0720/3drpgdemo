@@ -138,68 +138,68 @@ char* WCharToMByte(LPCWSTR lpcwszStr)
 //左对齐
 void TextLeft( const char* str,irr::core::vector2d<s32> pos , irr::video::SColor color,u32 fontsize,u32 weight)
 {
-	irr::gui::IGUIEnvironment* ui=0;
-	ui=getIrrUI();
-	if(ui==0) return;
-
-	WCHAR * pwStr = ConvertLPCSTRToLPWSTR((char*)str); 
-	gui::IGUIFont *font;
-
- //STSONG.TTF 华文宋体   SIMFANG.TTF  STFANGSO.TTF 华文仿宋   SIMSUN.TTC宋体,新宋体          SIMKAI.TTF华文楷体        Fixedsys
-	font = ui->getDXFont("宋体",false,fontsize,0,weight);
-
-		int textsize=strlen(str);
-core::rect<s32> AbsoluteRect( pos, pos+ core::dimension2d<s32>(textsize*fontsize,fontsize)); 
-		font->draw(pwStr,AbsoluteRect,color);
-		delete []pwStr;
+//	irr::gui::IGUIEnvironment* ui=0;
+//	ui=getIrrUI();
+//	if(ui==0) return;
+//
+//	WCHAR * pwStr = ConvertLPCSTRToLPWSTR((char*)str); 
+//	gui::IGUIFont *font;
+//
+// //STSONG.TTF 华文宋体   SIMFANG.TTF  STFANGSO.TTF 华文仿宋   SIMSUN.TTC宋体,新宋体          SIMKAI.TTF华文楷体        Fixedsys
+//	font = ui->getDXFont("宋体",false,fontsize,0,weight);
+//
+//		int textsize=strlen(str);
+//core::rect<s32> AbsoluteRect( pos, pos+ core::dimension2d<s32>(textsize*fontsize,fontsize)); 
+//		font->draw(pwStr,AbsoluteRect,color);
+//		delete []pwStr;
 	//	delete []temp;
 }
 
 //左对齐 自动换行wrapWide就是每行的长度
 void TextLeft(const char* str,irr::core::vector2d<s32> pos , irr::video::SColor color,u32 fontsize,u32 weight,int wrapWide)
 {
-	irr::gui::IGUIEnvironment* ui=0;
-	ui=getIrrUI();
-	if(ui==0) return;
+	//irr::gui::IGUIEnvironment* ui=0;
+	//ui=getIrrUI();
+	//if(ui==0) return;
 
-	
-	gui::IGUIFont *font;
+	//
+	//gui::IGUIFont *font;
 
-	//STSONG.TTF 华文宋体   SIMFANG.TTF  STFANGSO.TTF 华文仿宋   SIMSUN.TTC宋体,新宋体          SIMKAI.TTF华文楷体        Fixedsys
-	font = ui->getDXFont("宋体",false,fontsize,0,weight);
-
-
-	int textsize=strlen(str);
-
-	WCHAR * pwStr = ConvertLPCSTRToLPWSTR((char*)str); 
-
-	//统计要换多少行
-	int row=textsize*fontsize/wrapWide; //总字数*每字宽度/每行的宽度 得到行数
-	if(row==0) row=1;
+	////STSONG.TTF 华文宋体   SIMFANG.TTF  STFANGSO.TTF 华文仿宋   SIMSUN.TTC宋体,新宋体          SIMKAI.TTF华文楷体        Fixedsys
+	//font = ui->getDXFont("宋体",false,fontsize,0,weight);
 
 
-	core::rect<s32> AbsoluteRect( pos, pos+ core::dimension2d<s32>(wrapWide,row*fontsize)); 
-	font->draw(pwStr,AbsoluteRect,color);
-				
-		
-	delete []pwStr;
+	//int textsize=strlen(str);
+
+	//WCHAR * pwStr = ConvertLPCSTRToLPWSTR((char*)str); 
+
+	////统计要换多少行
+	//int row=textsize*fontsize/wrapWide; //总字数*每字宽度/每行的宽度 得到行数
+	//if(row==0) row=1;
+
+
+	//core::rect<s32> AbsoluteRect( pos, pos+ core::dimension2d<s32>(wrapWide,row*fontsize)); 
+	//font->draw(pwStr,AbsoluteRect,color);
+	//			
+	//	
+	//delete []pwStr;
 }
 
 //居中对齐
 void TextCenter(const char* str,irr::core::vector2d<s32> pos , irr::video::SColor color,u32 fontsize,u32 weight)
 {
-	irr::gui::IGUIEnvironment* ui=0;
-	ui=getIrrUI();
-	if(ui==0) return;
-
-WCHAR * pwStr = ConvertLPCSTRToLPWSTR((char*)str); 
-	gui::IGUIFont *font;
-    //STSONG.TTF 华文宋体   SIMFANG.TTF  STFANGSO.TTF 华文仿宋   SIMSUN.TTC宋体,新宋体          SIMKAI.TTF华文楷体        Fixedsys
-	font = ui->getDXFont("宋体",true,fontsize,0,weight);
-		int textsize=strlen(str);
-	core::rect<s32> AbsoluteRect( pos, pos+ core::dimension2d<s32>(textsize*fontsize,fontsize)); 
-	font->draw(pwStr,AbsoluteRect,color);
-	delete []pwStr;
+//	irr::gui::IGUIEnvironment* ui=0;
+//	ui=getIrrUI();
+//	if(ui==0) return;
+//
+//WCHAR * pwStr = ConvertLPCSTRToLPWSTR((char*)str); 
+//	gui::IGUIFont *font;
+//    //STSONG.TTF 华文宋体   SIMFANG.TTF  STFANGSO.TTF 华文仿宋   SIMSUN.TTC宋体,新宋体          SIMKAI.TTF华文楷体        Fixedsys
+//	font = ui->getDXFont("宋体",true,fontsize,0,weight);
+//		int textsize=strlen(str);
+//	core::rect<s32> AbsoluteRect( pos, pos+ core::dimension2d<s32>(textsize*fontsize,fontsize)); 
+//	font->draw(pwStr,AbsoluteRect,color);
+//	delete []pwStr;
 }
 
 
@@ -242,24 +242,7 @@ int IniGetInt(  char *strFile, char *lpAppName, char *lpKeyName )
 }
 
 // -----------------------------------------------------------------------------------------
-
-//irrklang声音引擎
-
-ISoundEngine* getSoundEngine()
-{
-	static ISoundEngine* m_Sound_engine=0;
-	if(m_Sound_engine==0){
-		//创建个声音引擎
-		m_Sound_engine = createIrrKlangDevice();
-		if (!m_Sound_engine)
-		{
-			printf("Could not startup engine\n");
-		}
-	}
-
-	return m_Sound_engine;
-
-}
+ 
 
 
 
