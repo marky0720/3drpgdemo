@@ -7,6 +7,6 @@ irrlicht 引擎的使用比较多，模型加载动作，拾取，添加删除�
 
  ![image](https://github.com/344717871/3drpgdemo/blob/master/screenshot1.png)
 ![image](https://github.com/344717871/3drpgdemo/blob/master/screenshot2.png)
-作者:司马威
+ 
 mail:simawei@qq.com
 2015.4.16
